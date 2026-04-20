@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.Rhistory
+.RData
+.venv/
+env/
+outputs/charts/*.png
+outputs/reports/*.csv
+outputs/reports/*.json
+outputs/reports/*.txt

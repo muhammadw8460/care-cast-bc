@@ -1,0 +1,541 @@
+health_authority,profession_name,year,count
+Fraser,General Practitioners,2011,1306.0
+Fraser,Medical Specialists,2011,914.0
+Fraser,Other Practitioners,2011,1600.0
+Interior,General Practitioners,2011,924.0
+Interior,Medical Specialists,2011,555.0
+Interior,Other Practitioners,2011,1045.0
+Northern,General Practitioners,2011,305.0
+Northern,Medical Specialists,2011,142.0
+Northern,Other Practitioners,2011,194.0
+Vancouver Coastal,General Practitioners,2011,1383.0
+Vancouver Coastal,Medical Specialists,2011,1835.0
+Vancouver Coastal,Other Practitioners,2011,1855.0
+Vancouver Island,General Practitioners,2011,1073.0
+Vancouver Island,Medical Specialists,2011,720.0
+Vancouver Island,Other Practitioners,2011,1245.0
+Fraser,General Practitioners,2012,1371.85
+Fraser,Medical Specialists,2012,960.09
+Fraser,Other Practitioners,2012,1680.68
+Interior,General Practitioners,2012,964.37
+Interior,Medical Specialists,2012,579.25
+Interior,Other Practitioners,2012,1090.66
+Northern,General Practitioners,2012,310.34
+Northern,Medical Specialists,2012,144.49
+Northern,Other Practitioners,2012,197.4
+Vancouver Coastal,General Practitioners,2012,1421.74
+Vancouver Coastal,Medical Specialists,2012,1886.4
+Vancouver Coastal,Other Practitioners,2012,1906.96
+Vancouver Island,General Practitioners,2012,1121.81
+Vancouver Island,Medical Specialists,2012,752.75
+Vancouver Island,Other Practitioners,2012,1301.63
+Fraser,General Practitioners,2013,1438.55
+Fraser,Medical Specialists,2013,1006.77
+Fraser,Other Practitioners,2013,1762.39
+Interior,General Practitioners,2013,1004.39
+Interior,Medical Specialists,2013,603.28
+Interior,Other Practitioners,2013,1135.91
+Northern,General Practitioners,2013,315.39
+Northern,Medical Specialists,2013,146.84
+Northern,Other Practitioners,2013,200.61
+Vancouver Coastal,General Practitioners,2013,1460.53
+Vancouver Coastal,Medical Specialists,2013,1937.87
+Vancouver Coastal,Other Practitioners,2013,1958.99
+Vancouver Island,General Practitioners,2013,1171.48
+Vancouver Island,Medical Specialists,2013,786.08
+Vancouver Island,Other Practitioners,2013,1359.26
+Fraser,General Practitioners,2014,1504.36
+Fraser,Medical Specialists,2014,1052.82
+Fraser,Other Practitioners,2014,1843.01
+Interior,General Practitioners,2014,1045.03
+Interior,Medical Specialists,2014,627.69
+Interior,Other Practitioners,2014,1181.87
+Northern,General Practitioners,2014,320.63
+Northern,Medical Specialists,2014,149.28
+Northern,Other Practitioners,2014,203.94
+Vancouver Coastal,General Practitioners,2014,1500.38
+Vancouver Coastal,Medical Specialists,2014,1990.74
+Vancouver Coastal,Other Practitioners,2014,2012.44
+Vancouver Island,General Practitioners,2014,1219.94
+Vancouver Island,Medical Specialists,2014,818.6
+Vancouver Island,Other Practitioners,2014,1415.49
+Fraser,General Practitioners,2015,1571.13
+Fraser,Medical Specialists,2015,1099.55
+Fraser,Other Practitioners,2015,1924.82
+Interior,General Practitioners,2015,1085.28
+Interior,Medical Specialists,2015,651.87
+Interior,Other Practitioners,2015,1227.4
+Northern,General Practitioners,2015,325.86
+Northern,Medical Specialists,2015,151.71
+Northern,Other Practitioners,2015,207.27
+Vancouver Coastal,General Practitioners,2015,1536.91
+Vancouver Coastal,Medical Specialists,2015,2039.21
+Vancouver Coastal,Other Practitioners,2015,2061.44
+Vancouver Island,General Practitioners,2015,1269.56
+Vancouver Island,Medical Specialists,2015,851.89
+Vancouver Island,Other Practitioners,2015,1473.07
+Fraser,General Practitioners,2016,1636.88
+Fraser,Medical Specialists,2016,1145.57
+Fraser,Other Practitioners,2016,2005.37
+Interior,General Practitioners,2016,1126.0
+Interior,Medical Specialists,2016,676.33
+Interior,Other Practitioners,2016,1273.46
+Northern,General Practitioners,2016,331.11
+Northern,Medical Specialists,2016,154.16
+Northern,Other Practitioners,2016,210.61
+Vancouver Coastal,General Practitioners,2016,1576.23
+Vancouver Coastal,Medical Specialists,2016,2091.38
+Vancouver Coastal,Other Practitioners,2016,2114.18
+Vancouver Island,General Practitioners,2016,1318.08
+Vancouver Island,Medical Specialists,2016,884.45
+Vancouver Island,Other Practitioners,2016,1529.37
+Fraser,General Practitioners,2017,1653.97
+Fraser,Medical Specialists,2017,1157.53
+Fraser,Other Practitioners,2017,2026.31
+Interior,General Practitioners,2017,1156.15
+Interior,Medical Specialists,2017,694.44
+Interior,Other Practitioners,2017,1307.55
+Northern,General Practitioners,2017,331.44
+Northern,Medical Specialists,2017,154.31
+Northern,Other Practitioners,2017,210.82
+Vancouver Coastal,General Practitioners,2017,1597.29
+Vancouver Coastal,Medical Specialists,2017,2119.32
+Vancouver Coastal,Other Practitioners,2017,2142.42
+Vancouver Island,General Practitioners,2017,1350.39
+Vancouver Island,Medical Specialists,2017,906.14
+Vancouver Island,Other Practitioners,2017,1566.86
+Fraser,General Practitioners,2018,1671.28
+Fraser,Medical Specialists,2018,1169.64
+Fraser,Other Practitioners,2018,2047.52
+Interior,General Practitioners,2018,1186.75
+Interior,Medical Specialists,2018,712.82
+Interior,Other Practitioners,2018,1342.16
+Northern,General Practitioners,2018,331.71
+Northern,Medical Specialists,2018,154.44
+Northern,Other Practitioners,2018,210.99
+Vancouver Coastal,General Practitioners,2018,1618.05
+Vancouver Coastal,Medical Specialists,2018,2146.87
+Vancouver Coastal,Other Practitioners,2018,2170.27
+Vancouver Island,General Practitioners,2018,1382.25
+Vancouver Island,Medical Specialists,2018,927.51
+Vancouver Island,Other Practitioners,2018,1603.82
+Fraser,General Practitioners,2019,1688.57
+Fraser,Medical Specialists,2019,1181.74
+Fraser,Other Practitioners,2019,2068.69
+Interior,General Practitioners,2019,1216.51
+Interior,Medical Specialists,2019,730.7
+Interior,Other Practitioners,2019,1375.81
+Northern,General Practitioners,2019,332.11
+Northern,Medical Specialists,2019,154.62
+Northern,Other Practitioners,2019,211.24
+Vancouver Coastal,General Practitioners,2019,1639.01
+Vancouver Coastal,Medical Specialists,2019,2174.68
+Vancouver Coastal,Other Practitioners,2019,2198.38
+Vancouver Island,General Practitioners,2019,1414.62
+Vancouver Island,Medical Specialists,2019,949.24
+Vancouver Island,Other Practitioners,2019,1641.39
+Fraser,General Practitioners,2020,1705.98
+Fraser,Medical Specialists,2020,1193.93
+Fraser,Other Practitioners,2020,2090.03
+Interior,General Practitioners,2020,1246.96
+Interior,Medical Specialists,2020,748.99
+Interior,Other Practitioners,2020,1410.25
+Northern,General Practitioners,2020,332.34
+Northern,Medical Specialists,2020,154.73
+Northern,Other Practitioners,2020,211.39
+Vancouver Coastal,General Practitioners,2020,1659.24
+Vancouver Coastal,Medical Specialists,2020,2201.53
+Vancouver Coastal,Other Practitioners,2020,2225.52
+Vancouver Island,General Practitioners,2020,1447.0
+Vancouver Island,Medical Specialists,2020,970.96
+Vancouver Island,Other Practitioners,2020,1678.95
+Fraser,General Practitioners,2021,1722.52
+Fraser,Medical Specialists,2021,1205.5
+Fraser,Other Practitioners,2021,2110.29
+Interior,General Practitioners,2021,1277.41
+Interior,Medical Specialists,2021,767.28
+Interior,Other Practitioners,2021,1444.69
+Northern,General Practitioners,2021,332.72
+Northern,Medical Specialists,2021,154.9
+Northern,Other Practitioners,2021,211.63
+Vancouver Coastal,General Practitioners,2021,1681.12
+Vancouver Coastal,Medical Specialists,2021,2230.55
+Vancouver Coastal,Other Practitioners,2021,2254.86
+Vancouver Island,General Practitioners,2021,1478.83
+Vancouver Island,Medical Specialists,2021,992.32
+Vancouver Island,Other Practitioners,2021,1715.89
+Fraser,General Practitioners,2022,1769.99
+Fraser,Medical Specialists,2022,1238.72
+Fraser,Other Practitioners,2022,2168.44
+Interior,General Practitioners,2022,1319.52
+Interior,Medical Specialists,2022,792.57
+Interior,Other Practitioners,2022,1492.32
+Northern,General Practitioners,2022,338.99
+Northern,Medical Specialists,2022,157.83
+Northern,Other Practitioners,2022,215.62
+Vancouver Coastal,General Practitioners,2022,1689.62
+Vancouver Coastal,Medical Specialists,2022,2241.84
+Vancouver Coastal,Other Practitioners,2022,2266.27
+Vancouver Island,General Practitioners,2022,1508.53
+Vancouver Island,Medical Specialists,2022,1012.24
+Vancouver Island,Other Practitioners,2022,1750.34
+Fraser,General Practitioners,2023,1818.68
+Fraser,Medical Specialists,2023,1272.8
+Fraser,Other Practitioners,2023,2228.09
+Interior,General Practitioners,2023,1362.04
+Interior,Medical Specialists,2023,818.11
+Interior,Other Practitioners,2023,1540.4
+Northern,General Practitioners,2023,345.11
+Northern,Medical Specialists,2023,160.68
+Northern,Other Practitioners,2023,219.51
+Vancouver Coastal,General Practitioners,2023,1695.01
+Vancouver Coastal,Medical Specialists,2023,2248.98
+Vancouver Coastal,Other Practitioners,2023,2273.49
+Vancouver Island,General Practitioners,2023,1537.56
+Vancouver Island,Medical Specialists,2023,1031.73
+Vancouver Island,Other Practitioners,2023,1784.03
+Fraser,General Practitioners,2024,1869.22
+Fraser,Medical Specialists,2024,1308.16
+Fraser,Other Practitioners,2024,2290.0
+Interior,General Practitioners,2024,1405.42
+Interior,Medical Specialists,2024,844.16
+Interior,Other Practitioners,2024,1589.46
+Northern,General Practitioners,2024,351.3
+Northern,Medical Specialists,2024,163.56
+Northern,Other Practitioners,2024,223.45
+Vancouver Coastal,General Practitioners,2024,1699.04
+Vancouver Coastal,Medical Specialists,2024,2254.34
+Vancouver Coastal,Other Practitioners,2024,2278.91
+Vancouver Island,General Practitioners,2024,1566.84
+Vancouver Island,Medical Specialists,2024,1051.37
+Vancouver Island,Other Practitioners,2024,1818.0
+Fraser,General Practitioners,2025,1919.3
+Fraser,Medical Specialists,2025,1343.22
+Fraser,Other Practitioners,2025,2351.37
+Interior,General Practitioners,2025,1450.3
+Interior,Medical Specialists,2025,871.12
+Interior,Other Practitioners,2025,1640.22
+Northern,General Practitioners,2025,357.58
+Northern,Medical Specialists,2025,166.48
+Northern,Other Practitioners,2025,227.45
+Vancouver Coastal,General Practitioners,2025,1700.1
+Vancouver Coastal,Medical Specialists,2025,2255.74
+Vancouver Coastal,Other Practitioners,2025,2280.32
+Vancouver Island,General Practitioners,2025,1596.56
+Vancouver Island,Medical Specialists,2025,1071.31
+Vancouver Island,Other Practitioners,2025,1852.48
+Fraser,General Practitioners,2026,1973.21
+Fraser,Medical Specialists,2026,1380.95
+Fraser,Other Practitioners,2026,2417.41
+Interior,General Practitioners,2026,1495.45
+Interior,Medical Specialists,2026,898.24
+Interior,Other Practitioners,2026,1691.28
+Northern,General Practitioners,2026,363.38
+Northern,Medical Specialists,2026,169.18
+Northern,Other Practitioners,2026,231.14
+Vancouver Coastal,General Practitioners,2026,1702.26
+Vancouver Coastal,Medical Specialists,2026,2258.61
+Vancouver Coastal,Other Practitioners,2026,2283.23
+Vancouver Island,General Practitioners,2026,1625.61
+Vancouver Island,Medical Specialists,2026,1090.81
+Vancouver Island,Other Practitioners,2026,1886.2
+Fraser,General Practitioners,2027,2028.02
+Fraser,Medical Specialists,2027,1419.31
+Fraser,Other Practitioners,2027,2484.56
+Interior,General Practitioners,2027,1541.84
+Interior,Medical Specialists,2027,926.1
+Interior,Other Practitioners,2027,1743.74
+Northern,General Practitioners,2027,369.07
+Northern,Medical Specialists,2027,171.83
+Northern,Other Practitioners,2027,234.75
+Vancouver Coastal,General Practitioners,2027,1701.5
+Vancouver Coastal,Medical Specialists,2027,2257.59
+Vancouver Coastal,Other Practitioners,2027,2282.19
+Vancouver Island,General Practitioners,2027,1655.29
+Vancouver Island,Medical Specialists,2027,1110.72
+Vancouver Island,Other Practitioners,2027,1920.62
+Fraser,General Practitioners,2028,2084.93
+Fraser,Medical Specialists,2028,1459.13
+Fraser,Other Practitioners,2028,2554.28
+Interior,General Practitioners,2028,1589.0
+Interior,Medical Specialists,2028,954.43
+Interior,Other Practitioners,2028,1797.08
+Northern,General Practitioners,2028,374.51
+Northern,Medical Specialists,2028,174.36
+Northern,Other Practitioners,2028,238.21
+Vancouver Coastal,General Practitioners,2028,1698.9
+Vancouver Coastal,Medical Specialists,2028,2254.14
+Vancouver Coastal,Other Practitioners,2028,2278.71
+Vancouver Island,General Practitioners,2028,1684.34
+Vancouver Island,Medical Specialists,2028,1130.22
+Vancouver Island,Other Practitioners,2028,1954.34
+Fraser,General Practitioners,2029,2144.34
+Fraser,Medical Specialists,2029,1500.71
+Fraser,Other Practitioners,2029,2627.06
+Interior,General Practitioners,2029,1636.99
+Interior,Medical Specialists,2029,983.26
+Interior,Other Practitioners,2029,1851.36
+Northern,General Practitioners,2029,379.62
+Northern,Medical Specialists,2029,176.74
+Northern,Other Practitioners,2029,241.46
+Vancouver Coastal,General Practitioners,2029,1692.75
+Vancouver Coastal,Medical Specialists,2029,2245.98
+Vancouver Coastal,Other Practitioners,2029,2270.46
+Vancouver Island,General Practitioners,2029,1713.44
+Vancouver Island,Medical Specialists,2029,1149.75
+Vancouver Island,Other Practitioners,2029,1988.11
+Fraser,General Practitioners,2030,2205.25
+Fraser,Medical Specialists,2030,1543.33
+Fraser,Other Practitioners,2030,2701.68
+Interior,General Practitioners,2030,1685.54
+Interior,Medical Specialists,2030,1012.42
+Interior,Other Practitioners,2030,1906.26
+Northern,General Practitioners,2030,384.59
+Northern,Medical Specialists,2030,179.06
+Northern,Other Practitioners,2030,244.63
+Vancouver Coastal,General Practitioners,2030,1684.72
+Vancouver Coastal,Medical Specialists,2030,2235.33
+Vancouver Coastal,Other Practitioners,2030,2259.69
+Vancouver Island,General Practitioners,2030,1742.46
+Vancouver Island,Medical Specialists,2030,1169.22
+Vancouver Island,Other Practitioners,2030,2021.77
+Fraser,General Practitioners,2031,2268.35
+Fraser,Medical Specialists,2031,1587.5
+Fraser,Other Practitioners,2031,2778.99
+Interior,General Practitioners,2031,1733.78
+Interior,Medical Specialists,2031,1041.4
+Interior,Other Practitioners,2031,1960.83
+Northern,General Practitioners,2031,389.33
+Northern,Medical Specialists,2031,181.26
+Northern,Other Practitioners,2031,247.64
+Vancouver Coastal,General Practitioners,2031,1676.02
+Vancouver Coastal,Medical Specialists,2031,2223.79
+Vancouver Coastal,Other Practitioners,2031,2248.02
+Vancouver Island,General Practitioners,2031,1771.12
+Vancouver Island,Medical Specialists,2031,1188.45
+Vancouver Island,Other Practitioners,2031,2055.02
+Fraser,General Practitioners,2032,2333.58
+Fraser,Medical Specialists,2032,1633.15
+Fraser,Other Practitioners,2032,2858.9
+Interior,General Practitioners,2032,1782.45
+Interior,Medical Specialists,2032,1070.63
+Interior,Other Practitioners,2032,2015.87
+Northern,General Practitioners,2032,393.67
+Northern,Medical Specialists,2032,183.28
+Northern,Other Practitioners,2032,250.4
+Vancouver Coastal,General Practitioners,2032,1666.41
+Vancouver Coastal,Medical Specialists,2032,2211.03
+Vancouver Coastal,Other Practitioners,2032,2235.13
+Vancouver Island,General Practitioners,2032,1799.25
+Vancouver Island,Medical Specialists,2032,1207.33
+Vancouver Island,Other Practitioners,2032,2087.67
+Fraser,General Practitioners,2033,2400.05
+Fraser,Medical Specialists,2033,1679.67
+Fraser,Other Practitioners,2033,2940.34
+Interior,General Practitioners,2033,1831.96
+Interior,Medical Specialists,2033,1100.37
+Interior,Other Practitioners,2033,2071.86
+Northern,General Practitioners,2033,397.97
+Northern,Medical Specialists,2033,185.29
+Northern,Other Practitioners,2033,253.14
+Vancouver Coastal,General Practitioners,2033,1652.71
+Vancouver Coastal,Medical Specialists,2033,2192.85
+Vancouver Coastal,Other Practitioners,2033,2216.75
+Vancouver Island,General Practitioners,2033,1826.99
+Vancouver Island,Medical Specialists,2033,1225.94
+Vancouver Island,Other Practitioners,2033,2119.85
+Fraser,General Practitioners,2034,2468.43
+Fraser,Medical Specialists,2034,1727.52
+Fraser,Other Practitioners,2034,3024.11
+Interior,General Practitioners,2034,1881.41
+Interior,Medical Specialists,2034,1130.07
+Interior,Other Practitioners,2034,2127.78
+Northern,General Practitioners,2034,402.01
+Northern,Medical Specialists,2034,187.16
+Northern,Other Practitioners,2034,255.7
+Vancouver Coastal,General Practitioners,2034,1639.58
+Vancouver Coastal,Medical Specialists,2034,2175.44
+Vancouver Coastal,Other Practitioners,2034,2199.15
+Vancouver Island,General Practitioners,2034,1853.41
+Vancouver Island,Medical Specialists,2034,1243.66
+Vancouver Island,Other Practitioners,2034,2150.5
+Fraser,General Practitioners,2035,2539.13
+Fraser,Medical Specialists,2035,1777.0
+Fraser,Other Practitioners,2035,3110.72
+Interior,General Practitioners,2035,1931.22
+Interior,Medical Specialists,2035,1159.99
+Interior,Other Practitioners,2035,2184.12
+Northern,General Practitioners,2035,405.56
+Northern,Medical Specialists,2035,188.82
+Northern,Other Practitioners,2035,257.96
+Vancouver Coastal,General Practitioners,2035,1623.15
+Vancouver Coastal,Medical Specialists,2035,2153.63
+Vancouver Coastal,Other Practitioners,2035,2177.1
+Vancouver Island,General Practitioners,2035,1880.07
+Vancouver Island,Medical Specialists,2035,1261.55
+Vancouver Island,Other Practitioners,2035,2181.44
+Fraser,General Practitioners,2036,2611.78
+Fraser,Medical Specialists,2036,1827.84
+Fraser,Other Practitioners,2036,3199.72
+Interior,General Practitioners,2036,1980.45
+Interior,Medical Specialists,2036,1189.56
+Interior,Other Practitioners,2036,2239.79
+Northern,General Practitioners,2036,408.9
+Northern,Medical Specialists,2036,190.37
+Northern,Other Practitioners,2036,260.08
+Vancouver Coastal,General Practitioners,2036,1605.7
+Vancouver Coastal,Medical Specialists,2036,2130.48
+Vancouver Coastal,Other Practitioners,2036,2153.7
+Vancouver Island,General Practitioners,2036,1906.04
+Vancouver Island,Medical Specialists,2036,1278.98
+Vancouver Island,Other Practitioners,2036,2211.58
+Fraser,General Practitioners,2037,2686.45
+Fraser,Medical Specialists,2037,1880.1
+Fraser,Other Practitioners,2037,3291.2
+Interior,General Practitioners,2037,2029.86
+Interior,Medical Specialists,2037,1219.23
+Interior,Other Practitioners,2037,2295.67
+Northern,General Practitioners,2037,411.86
+Northern,Medical Specialists,2037,191.75
+Northern,Other Practitioners,2037,261.97
+Vancouver Coastal,General Practitioners,2037,1587.62
+Vancouver Coastal,Medical Specialists,2037,2106.5
+Vancouver Coastal,Other Practitioners,2037,2129.46
+Vancouver Island,General Practitioners,2037,1930.9
+Vancouver Island,Medical Specialists,2037,1295.66
+Vancouver Island,Other Practitioners,2037,2240.42
+Fraser,General Practitioners,2038,2762.57
+Fraser,Medical Specialists,2038,1933.37
+Fraser,Other Practitioners,2038,3384.46
+Interior,General Practitioners,2038,2079.9
+Interior,Medical Specialists,2038,1249.29
+Interior,Other Practitioners,2038,2352.26
+Northern,General Practitioners,2038,414.43
+Northern,Medical Specialists,2038,192.95
+Northern,Other Practitioners,2038,263.6
+Vancouver Coastal,General Practitioners,2038,1565.75
+Vancouver Coastal,Medical Specialists,2038,2077.48
+Vancouver Coastal,Other Practitioners,2038,2100.12
+Vancouver Island,General Practitioners,2038,1956.06
+Vancouver Island,Medical Specialists,2038,1312.55
+Vancouver Island,Other Practitioners,2038,2269.62
+Fraser,General Practitioners,2039,2839.56
+Fraser,Medical Specialists,2039,1987.26
+Fraser,Other Practitioners,2039,3478.79
+Interior,General Practitioners,2039,2130.03
+Interior,Medical Specialists,2039,1279.4
+Interior,Other Practitioners,2039,2408.97
+Northern,General Practitioners,2039,416.86
+Northern,Medical Specialists,2039,194.08
+Northern,Other Practitioners,2039,265.15
+Vancouver Coastal,General Practitioners,2039,1544.22
+Vancouver Coastal,Medical Specialists,2039,2048.91
+Vancouver Coastal,Other Practitioners,2039,2071.24
+Vancouver Island,General Practitioners,2039,1979.31
+Vancouver Island,Medical Specialists,2039,1328.15
+Vancouver Island,Other Practitioners,2039,2296.59
+Fraser,General Practitioners,2040,2918.6
+Fraser,Medical Specialists,2040,2042.57
+Fraser,Other Practitioners,2040,3575.62
+Interior,General Practitioners,2040,2179.51
+Interior,Medical Specialists,2040,1309.12
+Interior,Other Practitioners,2040,2464.92
+Northern,General Practitioners,2040,418.84
+Northern,Medical Specialists,2040,195.0
+Northern,Other Practitioners,2040,266.41
+Vancouver Coastal,General Practitioners,2040,1520.52
+Vancouver Coastal,Medical Specialists,2040,2017.47
+Vancouver Coastal,Other Practitioners,2040,2039.46
+Vancouver Island,General Practitioners,2040,2002.96
+Vancouver Island,Medical Specialists,2040,1344.02
+Vancouver Island,Other Practitioners,2040,2324.03
+Fraser,General Practitioners,2041,2999.64
+Fraser,Medical Specialists,2041,2099.29
+Fraser,Other Practitioners,2041,3674.91
+Interior,General Practitioners,2041,2228.26
+Interior,Medical Specialists,2041,1338.4
+Interior,Other Practitioners,2041,2520.06
+Northern,General Practitioners,2041,420.52
+Northern,Medical Specialists,2041,195.78
+Northern,Other Practitioners,2041,267.48
+Vancouver Coastal,General Practitioners,2041,1495.33
+Vancouver Coastal,Medical Specialists,2041,1984.05
+Vancouver Coastal,Other Practitioners,2041,2005.67
+Vancouver Island,General Practitioners,2041,2025.66
+Vancouver Island,Medical Specialists,2041,1359.25
+Vancouver Island,Other Practitioners,2041,2350.37
+Fraser,General Practitioners,2042,3081.61
+Fraser,Medical Specialists,2042,2156.65
+Fraser,Other Practitioners,2042,3775.32
+Interior,General Practitioners,2042,2276.58
+Interior,Medical Specialists,2042,1367.42
+Interior,Other Practitioners,2042,2574.7
+Northern,General Practitioners,2042,421.96
+Northern,Medical Specialists,2042,196.45
+Northern,Other Practitioners,2042,268.39
+Vancouver Coastal,General Practitioners,2042,1470.15
+Vancouver Coastal,Medical Specialists,2042,1950.63
+Vancouver Coastal,Other Practitioners,2042,1971.89
+Vancouver Island,General Practitioners,2042,2047.37
+Vancouver Island,Medical Specialists,2042,1373.82
+Vancouver Island,Other Practitioners,2042,2375.56
+Fraser,General Practitioners,2043,3165.47
+Fraser,Medical Specialists,2043,2215.35
+Fraser,Other Practitioners,2043,3878.07
+Interior,General Practitioners,2043,2323.89
+Interior,Medical Specialists,2043,1395.84
+Interior,Other Practitioners,2043,2628.21
+Northern,General Practitioners,2043,422.91
+Northern,Medical Specialists,2043,196.89
+Northern,Other Practitioners,2043,269.0
+Vancouver Coastal,General Practitioners,2043,1443.76
+Vancouver Coastal,Medical Specialists,2043,1915.61
+Vancouver Coastal,Other Practitioners,2043,1936.49
+Vancouver Island,General Practitioners,2043,2069.39
+Vancouver Island,Medical Specialists,2043,1388.59
+Vancouver Island,Other Practitioners,2043,2401.11
+Fraser,General Practitioners,2044,3250.19
+Fraser,Medical Specialists,2044,2274.63
+Fraser,Other Practitioners,2044,3981.85
+Interior,General Practitioners,2044,2369.72
+Interior,Medical Specialists,2044,1423.37
+Interior,Other Practitioners,2044,2680.04
+Northern,General Practitioners,2044,423.97
+Northern,Medical Specialists,2044,197.39
+Northern,Other Practitioners,2044,269.67
+Vancouver Coastal,General Practitioners,2044,1416.79
+Vancouver Coastal,Medical Specialists,2044,1879.84
+Vancouver Coastal,Other Practitioners,2044,1900.32
+Vancouver Island,General Practitioners,2044,2090.72
+Vancouver Island,Medical Specialists,2044,1402.91
+Vancouver Island,Other Practitioners,2044,2425.86
+Fraser,General Practitioners,2045,3335.92
+Fraser,Medical Specialists,2045,2334.64
+Fraser,Other Practitioners,2045,4086.89
+Interior,General Practitioners,2045,2414.79
+Interior,Medical Specialists,2045,1450.44
+Interior,Other Practitioners,2045,2731.01
+Northern,General Practitioners,2045,424.63
+Northern,Medical Specialists,2045,197.7
+Northern,Other Practitioners,2045,270.09
+Vancouver Coastal,General Practitioners,2045,1389.15
+Vancouver Coastal,Medical Specialists,2045,1843.16
+Vancouver Coastal,Other Practitioners,2045,1863.25
+Vancouver Island,General Practitioners,2045,2112.02
+Vancouver Island,Medical Specialists,2045,1417.2
+Vancouver Island,Other Practitioners,2045,2450.57
+Fraser,General Practitioners,2046,3424.61
+Fraser,Medical Specialists,2046,2396.7
+Fraser,Other Practitioners,2046,4195.54
+Interior,General Practitioners,2046,2458.22
+Interior,Medical Specialists,2046,1476.53
+Interior,Other Practitioners,2046,2780.12
+Northern,General Practitioners,2046,424.8
+Northern,Medical Specialists,2046,197.78
+Northern,Other Practitioners,2046,270.2
+Vancouver Coastal,General Practitioners,2046,1361.23
+Vancouver Coastal,Medical Specialists,2046,1806.11
+Vancouver Coastal,Other Practitioners,2046,1825.79
+Vancouver Island,General Practitioners,2046,2132.49
+Vancouver Island,Medical Specialists,2046,1430.94
+Vancouver Island,Other Practitioners,2046,2474.33

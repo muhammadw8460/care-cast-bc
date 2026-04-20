@@ -1,0 +1,91 @@
+LHA,HDSA,HA,FISCAL_YEAR,POPULATION,SERVICES,PAYMENTS,GP_DOCTORS,SPEC_DOCTORS,SUPP_DOCTORS
+1 - Fernie,11 - East Kootenay,1 - Interior,2009/2010,14893,56509,3068940.23,23,3,22
+2 - Cranbrook,11 - East Kootenay,1 - Interior,2009/2010,25753,1035454,26581125.33,46,40,45
+3 - Kimberley,11 - East Kootenay,1 - Interior,2009/2010,8585,31473,1221134.47,11, ,9
+4 - Windermere,11 - East Kootenay,1 - Interior,2009/2010,10722,43594,2243469.79,14, ,17
+5 - Creston,11 - East Kootenay,1 - Interior,2009/2010,12669,84369,3970041.76,18, ,25
+6 - Kootenay Lake,12 - Kootenay/Boundary,1 - Interior,2009/2010,3848,4859,209876.12,4, ,7
+7 - Nelson,12 - Kootenay/Boundary,1 - Interior,2009/2010,25120,291999,11569063.64,42,12,86
+9 - Castlegar,12 - Kootenay/Boundary,1 - Interior,2009/2010,13445,78919,3065069.31,18, ,13
+10 - Arrow Lakes,12 - Kootenay/Boundary,1 - Interior,2009/2010,4781,21786,1092218.15,7, ,7
+11 - Trail,12 - Kootenay/Boundary,1 - Interior,2009/2010,19378,872386,23482280.28,47,37,34
+12 - Grand Forks,12 - Kootenay/Boundary,1 - Interior,2009/2010,9036,34183,1735231.43,5,1,7
+13 - Kettle Valley,12 - Kootenay/Boundary,1 - Interior,2009/2010,3697,4954,252254.09,2, ,1
+14 - Southern Okanagan,13 - Okanagan,1 - Interior,2009/2010,19815,138342,5450278.51,23, ,18
+15 - Penticton,13 - Okanagan,1 - Interior,2009/2010,41648,1235976,37259217.15,64,64,65
+16 - Keremeos,13 - Okanagan,1 - Interior,2009/2010,5242,25822,1033302.45,5, ,4
+17 - Princeton,13 - Okanagan,1 - Interior,2009/2010,5059,21384,979683.86,5, ,3
+18 - Golden,11 - East Kootenay,1 - Interior,2009/2010,7374,37963,1863466.45,10,3,11
+19 - Revelstoke,14 - Thompson/Cariboo,1 - Interior,2009/2010,7928,46827,2336514.69,13,1,18
+20 - Salmon Arm,14 - Thompson/Cariboo,1 - Interior,2009/2010,34914,323400,14444327.84,54,10,43
+21 - Armstrong - Spallumcheen,13 - Okanagan,1 - Interior,2009/2010,9679,21442,812721.63,7, ,10
+22 - Vernon,13 - Okanagan,1 - Interior,2009/2010,65877,2037362,50932377.31,90,70,133
+23 - Central Okanagan,13 - Okanagan,1 - Interior,2009/2010,184279,3679840,116439440.5,203,184,268
+24 - Kamloops,14 - Thompson/Cariboo,1 - Interior,2009/2010,110846,2137168,66020147.57,118,122,126
+25 - 100 Mile House,14 - Thompson/Cariboo,1 - Interior,2009/2010,14756,93744,4465777.77,17, ,11
+26 - North Thompson,14 - Thompson/Cariboo,1 - Interior,2009/2010,4309,15561,684977.66,5, ,2
+27 - Cariboo - Chilcotin,14 - Thompson/Cariboo,1 - Interior,2009/2010,26730,206989,11272126.83,33,7,29
+28 - Quesnel,52 - Northern Interior,5 - Northern,2009/2010,23584,201762,10183842.75,26,6,14
+29 - Lillooet,14 - Thompson/Cariboo,1 - Interior,2009/2010,4425,26397,1160071.39,7, ,2
+30 - South Cariboo,14 - Thompson/Cariboo,1 - Interior,2009/2010,7413,17513,730684.58,3, , 
+31 - Merritt,14 - Thompson/Cariboo,1 - Interior,2009/2010,11718,91460,3563827.47,6, ,9
+32 - Hope,21 - Fraser East,2 - Fraser,2009/2010,8205,48695,1993790.14,11, ,4
+33 - Chilliwack,21 - Fraser East,2 - Fraser,2009/2010,84624,798147,34191048.28,91,39,70
+34 - Abbotsford,21 - Fraser East,2 - Fraser,2009/2010,135956,3141234,84127599.22,117,95,130
+35 - Langley,23 - Fraser South,2 - Fraser,2009/2010,129390,1266867,51655457.44,110,75,162
+37 - Delta,23 - Fraser South,2 - Fraser,2009/2010,100635,833296,31332511.47,103,22,111
+38 - Richmond,31 - Richmond,3 - Vancouver Coastal,2009/2010,193255,1767614,80366342.49,150,121,257
+40 - New Westminster,22 - Fraser North,2 - Fraser,2009/2010,65016,6245574,132790965.7,72,215,88
+41 - Burnaby,22 - Fraser North,2 - Fraser,2009/2010,222802,11035213,157169307.9,186,138,282
+42 - Maple Ridge,22 - Fraser North,2 - Fraser,2009/2010,93271,734577,31793337.32,82,41,104
+43 - Coquitlam,22 - Fraser North,2 - Fraser,2009/2010,215558,1233920,50438957,156,49,256
+44 - North Vancouver,33 - North Shore/Coast Garibaldi,3 - Vancouver Coastal,2009/2010,138055,2086743,80441317.97,145,139,227
+45 - West Vancouver - Bowen Island,33 - North Shore/Coast Garibaldi,3 - Vancouver Coastal,2009/2010,51396,521862,22467314.22,76,40,68
+46 - Sunshine Coast,33 - North Shore/Coast Garibaldi,3 - Vancouver Coastal,2009/2010,29551,250544,12157509.72,40,10,50
+47 - Powell River,33 - North Shore/Coast Garibaldi,3 - Vancouver Coastal,2009/2010,19828,176361,8458726.83,38,9,26
+48 - Howe Sound,33 - North Shore/Coast Garibaldi,3 - Vancouver Coastal,2009/2010,34784,219940,9053785.39,54,6,97
+49 - Bella Coola Valley,33 - North Shore/Coast Garibaldi,3 - Vancouver Coastal,2009/2010,2893,279,4580.5,3, ,1
+50 - Queen Charlotte,51 - Northwest,5 - Northern,2009/2010,4652,2416,83840.52,3, ,2
+51 - Snow Country,51 - Northwest,5 - Northern,2009/2010,490, , , , , 
+52 - Prince Rupert,51 - Northwest,5 - Northern,2009/2010,14242,99517,5985985.41,19,4,12
+53 - Upper Skeena,51 - Northwest,5 - Northern,2009/2010,5408,238234,1751269.84,5,1, 
+54 - Smithers,51 - Northwest,5 - Northern,2009/2010,15970,126191,6071455.33,25,2,24
+55 - Burns Lake,52 - Northern Interior,5 - Northern,2009/2010,7880,43169,1921022.08,6, , 
+56 - Nechako,52 - Northern Interior,5 - Northern,2009/2010,15010,71423,3978617.05,19, ,5
+57 - Prince George,52 - Northern Interior,5 - Northern,2009/2010,96107,1858302,55391971.42,115,88,78
+59 - Peace River South,53 - Northeast,5 - Northern,2009/2010,26976,197906,11671736.14,27,16,17
+60 - Peace River North,53 - Northeast,5 - Northern,2009/2010,34813,654914,15108698.89,30,8,21
+61 - Greater Victoria,41 - South Vancouver Island,4 - Vancouver Island,2009/2010,221553,4935034,191193964.1,405,386,530
+62 - Sooke,41 - South Vancouver Island,4 - Vancouver Island,2009/2010,66718,288219,11272211.33,51,10,80
+63 - Saanich,41 - South Vancouver Island,4 - Vancouver Island,2009/2010,63599,3987797,52736524.31,94,43,92
+64 - Gulf Islands,41 - South Vancouver Island,4 - Vancouver Island,2009/2010,15708,84192,4273493.22,22,7,34
+65 - Cowichan,42 - Central Vancouver Island,4 - Vancouver Island,2009/2010,56900,1100239,31438082.3,67,48,80
+66 - Lake Cowichan,42 - Central Vancouver Island,4 - Vancouver Island,2009/2010,6423,19234,725146,4, ,4
+67 - Ladysmith,42 - Central Vancouver Island,4 - Vancouver Island,2009/2010,18366,107108,4056651.7,21,4,12
+68 - Nanaimo,42 - Central Vancouver Island,4 - Vancouver Island,2009/2010,102889,1269780,64963370.47,150,114,144
+69 - Qualicum,42 - Central Vancouver Island,4 - Vancouver Island,2009/2010,45356,284998,10690147.68,40,4,56
+70 - Alberni,42 - Central Vancouver Island,4 - Vancouver Island,2009/2010,31542,259117,13277569.35,32,17,30
+71 - Courtenay,42 - Central Vancouver Island,4 - Vancouver Island,2009/2010,64084,1169823,37637497.04,100,58,122
+72 - Campbell River,42 - Central Vancouver Island,4 - Vancouver Island,2009/2010,41580,444712,22597450.12,68,29,55
+75 - Mission,21 - Fraser East,2 - Fraser,2009/2010,42217,264979,9137934.41,38,2,24
+76 - Agassiz - Harrison,21 - Fraser East,2 - Fraser,2009/2010,8991,18456,620852.36,3, ,4
+77 - Summerland,13 - Okanagan,1 - Interior,2009/2010,11706,120777,3599389.18,17,1,14
+78 - Enderby,13 - Okanagan,1 - Interior,2009/2010,7640,30822,1064582.9,7, ,6
+80 - Kitimat,51 - Northwest,5 - Northern,2009/2010,10297,78324,4410334.36,10,2,2
+81 - Fort Nelson,53 - Northeast,5 - Northern,2009/2010,6116,33997,1493011.71,3, ,4
+83 - Central Coast,33 - North Shore/Coast Garibaldi,3 - Vancouver Coastal,2009/2010,1467,2629,73845.56,2, , 
+84 - Vancouver Island West,43 - North Vancouver Island,4 - Vancouver Island,2009/2010,2364,307,9066.01,3, ,1
+85 - Vancouver Island North,43 - North Vancouver Island,4 - Vancouver Island,2009/2010,12287,62254,2934966.12,16, ,5
+87 - Stikine,51 - Northwest,5 - Northern,2009/2010,1011, , , , , 
+88 - Terrace,51 - Northwest,5 - Northern,2009/2010,20277,446888,12786970.76,15,15,15
+92 - Nisga'a,51 - Northwest,5 - Northern,2009/2010,1968,17,133.81,2, , 
+94 - Telegraph Creek,51 - Northwest,5 - Northern,2009/2010,692, , , , , 
+161 - Vancouver - City Centre,32 - Vancouver,3 - Vancouver Coastal,2009/2010,119350,8353685,341941154.5,321,923,369
+162 - Vancouver - Downtown Eastside,32 - Vancouver,3 - Vancouver Coastal,2009/2010,64648,456006,17220932.67,76,17,60
+163 - Vancouver - North East,32 - Vancouver,3 - Vancouver Coastal,2009/2010,104641,471303,18921896.98,59,21,115
+164 - Vancouver - Westside,32 - Vancouver,3 - Vancouver Coastal,2009/2010,133161,1391149,65998104.61,221,220,299
+165 - Vancouver - Midtown,32 - Vancouver,3 - Vancouver Coastal,2009/2010,88202,1202156,59551880.19,101,298,126
+166 - Vancouver - South,32 - Vancouver,3 - Vancouver Coastal,2009/2010,133206,955363,38229851.16,97,31,160
+201 - Surrey,23 - Fraser South,2 - Fraser,2009/2010,381707,7732989,163378941.1,225,167,248
+202 - South Surrey/Whiterock,23 - Fraser South,2 - Fraser,2009/2010,84251,1326181,48777364.07,112,71,117
+Unknown,Unknown,Unknown,2009/2010, ,27352,1414377.13,24,20,7

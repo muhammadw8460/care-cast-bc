@@ -1,0 +1,35 @@
+{
+  "datasets": [
+    {
+      "name": "workforce",
+      "source": "csv",
+      "path": "data/raw/workforce_supply.csv",
+      "column_map": {
+        "health_authority": "region",
+        "profession_name": "profession",
+        "year": "year",
+        "count": "workforce_supply"
+      }
+    },
+    {
+      "name": "population",
+      "source": "csv",
+      "path": "data/raw/population_indicators.csv",
+      "column_map": {
+        "health_authority": "region",
+        "year": "year",
+        "population_total": "population"
+      }
+    },
+    {
+      "name": "demand",
+      "source": "csv",
+      "path": "data/raw/demand_indicators.csv",
+      "column_map": {
+        "health_authority": "region",
+        "year": "year",
+        "demand_index": "demand_indicator"
+      }
+    }
+  ]
+}
