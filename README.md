@@ -12,6 +12,7 @@ Working baseline complete and validated locally.
 - Cleans and standardizes schema (year, region, profession, metrics)
 - Integrates cleaned tables into one analytical dataset
 - Runs statistical modeling in R for baseline forecasting
+- Applies holdout-calibrated uncertainty treatment on forecast intervals
 - Exports chart and report artifacts for technical and non-technical review
 
 ## Validated Run Snapshot
@@ -123,6 +124,7 @@ After a successful run, you should see:
 - outputs/reports/regression_summary.txt
 - outputs/reports/regression_predictions.csv
 - outputs/reports/workforce_forecast.csv
+- outputs/reports/forecast_model_diagnostics.csv
 - outputs/reports/run_status.txt
 - outputs/charts/supply_trends_by_region.png
 - outputs/charts/supply_vs_demand_proxy.png

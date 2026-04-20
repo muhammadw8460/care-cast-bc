@@ -21,6 +21,31 @@ determine_holdout <- function(n) {
   return(0)
 }
 
+CALIBRATION_QUANTILE <- 0.90
+MIN_CALIBRATION_ADDON <- 1e-6
+
+compute_interval_calibration <- function(actual, predicted, residuals) {
+  holdout_abs_err <- safe_numeric(abs(actual - predicted))
+  holdout_abs_err <- holdout_abs_err[is.finite(holdout_abs_err)]
+
+  residual_abs_err <- safe_numeric(abs(residuals))
+  residual_abs_err <- residual_abs_err[is.finite(residual_abs_err)]
+
+  if (length(holdout_abs_err) > 0) {
+    addon <- as.numeric(quantile(holdout_abs_err, probs = CALIBRATION_QUANTILE, na.rm = TRUE))
+    addon <- max(addon, MIN_CALIBRATION_ADDON)
+    return(list(addon = addon, source = "holdout_abs_error_q90"))
+  }
+
+  if (length(residual_abs_err) > 0) {
+    addon <- as.numeric(quantile(residual_abs_err, probs = CALIBRATION_QUANTILE, na.rm = TRUE))
+    addon <- max(addon, MIN_CALIBRATION_ADDON)
+    return(list(addon = addon, source = "residual_abs_error_q90"))
+  }
+
+  list(addon = MIN_CALIBRATION_ADDON, source = "epsilon_fallback")
+}
+
 forecast_linear <- function(train_df, future_years, test_years) {
   fit <- lm(workforce_supply ~ year, data = train_df)
 
@@ -268,25 +293,44 @@ for (key in split(series, interaction(series$region, series$profession, drop = T
   best_row <- metrics %>% arrange(selection_score) %>% slice(1)
   selected_model <- best_row$model[[1]]
   selected_holdout_rmse <- best_row$holdout_rmse[[1]]
+  selected_candidate_idx <- which(sapply(candidates, function(x) x$name) == selected_model)[1]
+
+  if (is.na(selected_candidate_idx)) next
+  selected_candidate <- candidates[[selected_candidate_idx]]
+
+  holdout_actual <- if (nrow(test) > 0) safe_numeric(test$workforce_supply) else numeric(0)
+  holdout_pred <- if (length(selected_candidate$test_pred) > 0) safe_numeric(selected_candidate$test_pred) else numeric(0)
+  calibration <- compute_interval_calibration(holdout_actual, holdout_pred, selected_candidate$residuals)
 
   final_fit <- fit_model_by_name(selected_model, key, next_years, numeric(0))
   if (is.null(final_fit)) next
 
-  final_future <- final_fit$future %>%
+  final_future <- final_fit$future
+  lower_margin <- pmax(final_future$predicted_supply - final_future$lower, 0)
+  upper_margin <- pmax(final_future$upper - final_future$predicted_supply, 0)
+
+  final_future$lower <- final_future$predicted_supply - (lower_margin + calibration$addon)
+  final_future$upper <- final_future$predicted_supply + (upper_margin + calibration$addon)
+
+  final_future <- final_future %>%
     mutate(
       region = key$region[[1]],
       profession = key$profession[[1]],
       selected_model = selected_model,
       holdout_rmse = selected_holdout_rmse,
       holdout_points = holdout_n,
+      calibration_addon = calibration$addon,
+      calibration_source = calibration$source,
+      interval_target = 0.95,
       uncertainty_width = upper - lower
     ) %>%
     mutate(
       predicted_supply = pmax(predicted_supply, 0),
       lower = pmax(lower, 0),
-      upper = pmax(upper, 0)
+      upper = pmax(upper, predicted_supply),
+      uncertainty_width = pmax(upper - lower, 0)
     ) %>%
-    select(region, profession, year, predicted_supply, lower, upper, selected_model, holdout_rmse, holdout_points, uncertainty_width)
+    select(region, profession, year, predicted_supply, lower, upper, selected_model, holdout_rmse, holdout_points, calibration_addon, calibration_source, interval_target, uncertainty_width)
 
   forecast_rows[[idx]] <- final_future
   idx <- idx + 1
@@ -296,9 +340,11 @@ for (key in split(series, interaction(series$region, series$profession, drop = T
       region = key$region[[1]],
       profession = key$profession[[1]],
       holdout_points = holdout_n,
-      selected = model == selected_model
+      selected = model == selected_model,
+      calibration_addon = ifelse(model == selected_model, calibration$addon, NA_real_),
+      calibration_source = ifelse(model == selected_model, calibration$source, NA_character_)
     ) %>%
-    select(region, profession, model, holdout_points, holdout_rmse, insample_rmse, selection_score, selected)
+    select(region, profession, model, holdout_points, holdout_rmse, insample_rmse, selection_score, selected, calibration_addon, calibration_source)
 
   diagnostic_rows[[diagnostic_idx]] <- model_diag
   diagnostic_idx <- diagnostic_idx + 1
