@@ -5,6 +5,141 @@ suppressPackageStartupMessages({
   library(tidyr)
 })
 
+rmse <- function(actual, predicted) {
+  sqrt(mean((actual - predicted)^2, na.rm = TRUE))
+}
+
+safe_numeric <- function(x) {
+  as.numeric(ifelse(is.finite(x), x, NA_real_))
+}
+
+determine_holdout <- function(n) {
+  if (n >= 12) return(4)
+  if (n >= 8) return(3)
+  if (n >= 6) return(2)
+  if (n >= 5) return(1)
+  return(0)
+}
+
+forecast_linear <- function(train_df, future_years, test_years) {
+  fit <- lm(workforce_supply ~ year, data = train_df)
+
+  future_pred <- as.data.frame(
+    predict(fit, newdata = data.frame(year = future_years), interval = "prediction")
+  )
+
+  test_pred <- numeric(0)
+  if (length(test_years) > 0) {
+    test_pred <- safe_numeric(predict(fit, newdata = data.frame(year = test_years)))
+  }
+
+  list(
+    name = "linear",
+    future = data.frame(
+      year = future_years,
+      predicted_supply = safe_numeric(future_pred$fit),
+      lower = safe_numeric(future_pred$lwr),
+      upper = safe_numeric(future_pred$upr)
+    ),
+    test_pred = test_pred,
+    residuals = safe_numeric(residuals(fit))
+  )
+}
+
+forecast_quadratic <- function(train_df, future_years, test_years) {
+  fit <- lm(workforce_supply ~ year + I(year^2), data = train_df)
+
+  future_pred <- as.data.frame(
+    predict(fit, newdata = data.frame(year = future_years), interval = "prediction")
+  )
+
+  test_pred <- numeric(0)
+  if (length(test_years) > 0) {
+    test_pred <- safe_numeric(predict(fit, newdata = data.frame(year = test_years)))
+  }
+
+  list(
+    name = "quadratic",
+    future = data.frame(
+      year = future_years,
+      predicted_supply = safe_numeric(future_pred$fit),
+      lower = safe_numeric(future_pred$lwr),
+      upper = safe_numeric(future_pred$upr)
+    ),
+    test_pred = test_pred,
+    residuals = safe_numeric(residuals(fit))
+  )
+}
+
+forecast_holt <- function(train_df, future_years, test_years) {
+  y <- ts(train_df$workforce_supply, frequency = 1)
+
+  fit <- tryCatch(
+    HoltWinters(y, gamma = FALSE),
+    error = function(e) NULL
+  )
+
+  if (is.null(fit)) {
+    return(NULL)
+  }
+
+  future_pred <- safe_numeric(predict(fit, n.ahead = length(future_years)))
+
+  test_pred <- numeric(0)
+  if (length(test_years) > 0) {
+    test_pred <- safe_numeric(predict(fit, n.ahead = length(test_years)))
+  }
+
+  if (!is.null(fit$fitted) && nrow(fit$fitted) > 0) {
+    fitted_vals <- safe_numeric(fit$fitted[, "xhat"])
+    observed_vals <- safe_numeric(train_df$workforce_supply)
+    observed_tail <- observed_vals[2:length(observed_vals)]
+    common_len <- min(length(observed_tail), length(fitted_vals))
+
+    if (common_len > 0) {
+      residuals_vec <- safe_numeric(observed_tail[1:common_len] - fitted_vals[1:common_len])
+    } else {
+      residuals_vec <- safe_numeric(observed_vals - mean(observed_vals, na.rm = TRUE))
+    }
+  } else {
+    residuals_vec <- safe_numeric(train_df$workforce_supply - mean(train_df$workforce_supply, na.rm = TRUE))
+  }
+
+  sigma <- sd(residuals_vec, na.rm = TRUE)
+  if (!is.finite(sigma) || sigma <= 0) {
+    sigma <- max(sd(train_df$workforce_supply, na.rm = TRUE), 1e-6)
+  }
+
+  z <- qnorm(0.975)
+  h <- seq_along(future_years)
+  band <- z * sigma * sqrt(h)
+
+  list(
+    name = "holt_winters",
+    future = data.frame(
+      year = future_years,
+      predicted_supply = future_pred,
+      lower = future_pred - band,
+      upper = future_pred + band
+    ),
+    test_pred = test_pred,
+    residuals = residuals_vec
+  )
+}
+
+fit_model_by_name <- function(model_name, train_df, future_years, test_years) {
+  if (model_name == "linear") {
+    return(forecast_linear(train_df, future_years, test_years))
+  }
+  if (model_name == "quadratic") {
+    return(forecast_quadratic(train_df, future_years, test_years))
+  }
+  if (model_name == "holt_winters") {
+    return(forecast_holt(train_df, future_years, test_years))
+  }
+  NULL
+}
+
 args <- commandArgs(trailingOnly = TRUE)
 input_path <- ifelse(length(args) >= 1, args[[1]], "data/processed/analytical_dataset.csv")
 output_root <- ifelse(length(args) >= 2, args[[2]], "outputs")
@@ -73,23 +208,100 @@ series <- df %>%
   summarise(workforce_supply = sum(workforce_supply, na.rm = TRUE), .groups = "drop")
 
 forecast_rows <- list()
+diagnostic_rows <- list()
 idx <- 1
+diagnostic_idx <- 1
+
 for (key in split(series, interaction(series$region, series$profession, drop = TRUE))) {
-  if (nrow(key) < 3) next
+  if (nrow(key) < 4) next
 
   key <- key %>% arrange(year)
-  fit <- lm(workforce_supply ~ year, data = key)
+  n <- nrow(key)
+  holdout_n <- determine_holdout(n)
+
+  if (holdout_n > 0) {
+    train <- key %>% slice(1:(n - holdout_n))
+    test <- key %>% slice((n - holdout_n + 1):n)
+  } else {
+    train <- key
+    test <- key[0, ]
+  }
+
   next_years <- seq(max(key$year) + 1, max(key$year) + forecast_horizon)
-  future_df <- data.frame(year = next_years)
+  test_years <- if (nrow(test) > 0) safe_numeric(test$year) else numeric(0)
 
-  pred <- as.data.frame(predict(fit, newdata = future_df, interval = "prediction"))
-  out <- cbind(
-    data.frame(region = key$region[[1]], profession = key$profession[[1]], year = next_years),
-    pred
-  ) %>% rename(predicted_supply = fit, lower = lwr, upper = upr)
+  candidate_names <- c("linear")
+  if (nrow(train) >= 5) candidate_names <- c(candidate_names, "quadratic")
+  if (nrow(train) >= 5) candidate_names <- c(candidate_names, "holt_winters")
 
-  forecast_rows[[idx]] <- out
+  candidates <- list()
+  for (model_name in candidate_names) {
+    fit_result <- fit_model_by_name(model_name, train, next_years, test_years)
+    if (!is.null(fit_result)) {
+      candidates[[length(candidates) + 1]] <- fit_result
+    }
+  }
+
+  if (length(candidates) == 0) next
+
+  metrics <- data.frame()
+  for (cand in candidates) {
+    holdout_rmse <- NA_real_
+    if (length(test_years) > 0 && length(cand$test_pred) == length(test_years)) {
+      holdout_rmse <- rmse(safe_numeric(test$workforce_supply), safe_numeric(cand$test_pred))
+    }
+
+    insample_rmse <- rmse(rep(0, length(cand$residuals)), cand$residuals)
+    selection_score <- ifelse(is.na(holdout_rmse), insample_rmse, holdout_rmse)
+
+    metrics <- bind_rows(
+      metrics,
+      data.frame(
+        model = cand$name,
+        holdout_rmse = holdout_rmse,
+        insample_rmse = insample_rmse,
+        selection_score = selection_score
+      )
+    )
+  }
+
+  best_row <- metrics %>% arrange(selection_score) %>% slice(1)
+  selected_model <- best_row$model[[1]]
+  selected_holdout_rmse <- best_row$holdout_rmse[[1]]
+
+  final_fit <- fit_model_by_name(selected_model, key, next_years, numeric(0))
+  if (is.null(final_fit)) next
+
+  final_future <- final_fit$future %>%
+    mutate(
+      region = key$region[[1]],
+      profession = key$profession[[1]],
+      selected_model = selected_model,
+      holdout_rmse = selected_holdout_rmse,
+      holdout_points = holdout_n,
+      uncertainty_width = upper - lower
+    ) %>%
+    mutate(
+      predicted_supply = pmax(predicted_supply, 0),
+      lower = pmax(lower, 0),
+      upper = pmax(upper, 0)
+    ) %>%
+    select(region, profession, year, predicted_supply, lower, upper, selected_model, holdout_rmse, holdout_points, uncertainty_width)
+
+  forecast_rows[[idx]] <- final_future
   idx <- idx + 1
+
+  model_diag <- metrics %>%
+    mutate(
+      region = key$region[[1]],
+      profession = key$profession[[1]],
+      holdout_points = holdout_n,
+      selected = model == selected_model
+    ) %>%
+    select(region, profession, model, holdout_points, holdout_rmse, insample_rmse, selection_score, selected)
+
+  diagnostic_rows[[diagnostic_idx]] <- model_diag
+  diagnostic_idx <- diagnostic_idx + 1
 }
 
 if (length(forecast_rows) > 0) {
@@ -97,6 +309,11 @@ if (length(forecast_rows) > 0) {
   write_csv(forecast_df, file.path(reports_dir, "workforce_forecast.csv"))
 } else {
   write_csv(data.frame(), file.path(reports_dir, "workforce_forecast.csv"))
+}
+
+if (length(diagnostic_rows) > 0) {
+  diagnostics_df <- bind_rows(diagnostic_rows)
+  write_csv(diagnostics_df, file.path(reports_dir, "forecast_model_diagnostics.csv"))
 }
 
 yearly_supply <- df %>%
