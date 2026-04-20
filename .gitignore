@@ -9,3 +9,5 @@ outputs/charts/*.png
 outputs/reports/*.csv
 outputs/reports/*.json
 outputs/reports/*.txt
+data/processed/*.csv
+!data/processed/.gitkeep
