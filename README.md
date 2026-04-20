@@ -68,6 +68,26 @@ python scripts/run_integration.py
 Rscript scripts/modeling.R data/processed/analytical_dataset.csv outputs 5
 ```
 
+## Automated Refresh and Validation
+
+To run a full refresh pipeline (fetch -> prepare -> clean -> integrate -> model -> validate):
+
+```powershell
+python scripts/refresh_pipeline.py --horizon 5
+```
+
+Validation-only check on current outputs:
+
+```powershell
+python scripts/validate_outputs.py
+```
+
+Scheduled automation is configured via GitHub Actions:
+
+- Workflow: .github/workflows/periodic-refresh.yml
+- Triggers: manual dispatch + weekly schedule
+- Outputs: uploads charts/reports/processed datasets as workflow artifacts
+
 ## Dashboard Delivery Layer
 
 An interactive Streamlit dashboard is included for communicating trends to technical and non-technical audiences.
@@ -135,6 +155,12 @@ python -m pip install -r requirements.txt
 ```
 
 - R package build-version warnings are often non-fatal if output files are still generated.
+
+- If automated refresh fails on source downloads, rerun fetch manually:
+
+```powershell
+python scripts/fetch_bc_sources.py --force
+```
 
 ## Future Enhancements
 
