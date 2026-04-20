@@ -68,6 +68,29 @@ python scripts/run_integration.py
 Rscript scripts/modeling.R data/processed/analytical_dataset.csv outputs 5
 ```
 
+## Dashboard Delivery Layer
+
+An interactive Streamlit dashboard is included for communicating trends to technical and non-technical audiences.
+
+Dashboard features:
+
+- Region, profession, and year-range filtering
+- Historical workforce trend visualization
+- Supply vs demand-proxy trend chart
+- Region/profession forecast view with uncertainty band
+- Data quality summary table
+- Download of filtered analytical data
+
+Run the dashboard:
+
+```powershell
+pwsh scripts/start_dashboard.ps1
+```
+
+Then open:
+
+- http://localhost:8501
+
 ## Expected Outputs
 
 After a successful run, you should see:
@@ -83,6 +106,7 @@ After a successful run, you should see:
 - outputs/reports/run_status.txt
 - outputs/charts/supply_trends_by_region.png
 - outputs/charts/supply_vs_demand_proxy.png
+- interactive dashboard at dashboard/app.py
 
 ## Data Notes
 
