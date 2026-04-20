@@ -166,6 +166,6 @@ python scripts/fetch_bc_sources.py --force
 
 ## Future Enhancements
 
-- Add dashboard delivery layer
-- Add richer forecasting models and uncertainty treatment
-- Automate periodic data refresh and validation
+- Add external data quality observability dashboard
+- Add scenario-based policy simulation controls
+- Add deployment-ready managed scheduling and alerting

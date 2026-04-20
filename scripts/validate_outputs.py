@@ -25,6 +25,7 @@ REQUIRED_COLUMNS = {
         "lower",
         "upper",
         "selected_model",
+        "model_warning_count",
         "calibration_addon",
         "calibration_source",
         "interval_target",
@@ -84,7 +85,7 @@ def validate_forecast(df: pd.DataFrame) -> list[str]:
         errors.append("Forecast dataset is empty")
         return errors
 
-    for col in ["predicted_supply", "lower", "upper", "uncertainty_width", "calibration_addon", "interval_target"]:
+    for col in ["predicted_supply", "lower", "upper", "uncertainty_width", "model_warning_count", "calibration_addon", "interval_target"]:
         numeric = pd.to_numeric(df[col], errors="coerce")
         if numeric.isna().any():
             errors.append(f"Forecast column '{col}' has non-numeric values")
@@ -93,6 +94,7 @@ def validate_forecast(df: pd.DataFrame) -> list[str]:
     numeric_upper = pd.to_numeric(df["upper"], errors="coerce")
     numeric_pred = pd.to_numeric(df["predicted_supply"], errors="coerce")
     numeric_width = pd.to_numeric(df["uncertainty_width"], errors="coerce")
+    numeric_warning_count = pd.to_numeric(df["model_warning_count"], errors="coerce")
     numeric_calibration = pd.to_numeric(df["calibration_addon"], errors="coerce")
     numeric_target = pd.to_numeric(df["interval_target"], errors="coerce")
 
@@ -104,6 +106,9 @@ def validate_forecast(df: pd.DataFrame) -> list[str]:
 
     if (numeric_width < 0).any():
         errors.append("Forecast has negative uncertainty_width")
+
+    if (numeric_warning_count < 0).any():
+        errors.append("Forecast has negative model_warning_count")
 
     if (numeric_calibration < 0).any():
         errors.append("Forecast has negative calibration_addon")

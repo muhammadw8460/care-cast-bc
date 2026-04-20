@@ -67,7 +67,9 @@ forecast_linear <- function(train_df, future_years, test_years) {
       upper = safe_numeric(future_pred$upr)
     ),
     test_pred = test_pred,
-    residuals = safe_numeric(residuals(fit))
+    residuals = safe_numeric(residuals(fit)),
+    warning_count = 0,
+    warning_text = ""
   )
 }
 
@@ -92,16 +94,29 @@ forecast_quadratic <- function(train_df, future_years, test_years) {
       upper = safe_numeric(future_pred$upr)
     ),
     test_pred = test_pred,
-    residuals = safe_numeric(residuals(fit))
+    residuals = safe_numeric(residuals(fit)),
+    warning_count = 0,
+    warning_text = ""
   )
 }
 
 forecast_holt <- function(train_df, future_years, test_years) {
   y <- ts(train_df$workforce_supply, frequency = 1)
 
-  fit <- tryCatch(
-    HoltWinters(y, gamma = FALSE),
-    error = function(e) NULL
+  warning_messages <- character(0)
+
+  fit <- withCallingHandlers(
+    tryCatch(
+      HoltWinters(y, gamma = FALSE),
+      error = function(e) {
+        warning_messages <<- c(warning_messages, paste("error:", conditionMessage(e)))
+        NULL
+      }
+    ),
+    warning = function(w) {
+      warning_messages <<- c(warning_messages, conditionMessage(w))
+      invokeRestart("muffleWarning")
+    }
   )
 
   if (is.null(fit)) {
@@ -148,7 +163,9 @@ forecast_holt <- function(train_df, future_years, test_years) {
       upper = future_pred + band
     ),
     test_pred = test_pred,
-    residuals = residuals_vec
+    residuals = residuals_vec,
+    warning_count = length(warning_messages),
+    warning_text = paste(unique(warning_messages), collapse = " | ")
   )
 }
 
@@ -277,7 +294,10 @@ for (key in split(series, interaction(series$region, series$profession, drop = T
     }
 
     insample_rmse <- rmse(rep(0, length(cand$residuals)), cand$residuals)
-    selection_score <- ifelse(is.na(holdout_rmse), insample_rmse, holdout_rmse)
+    warning_count <- ifelse(is.null(cand$warning_count), 0, cand$warning_count)
+    warning_penalty <- ifelse(warning_count > 0, 1e6, 0)
+    base_score <- ifelse(is.na(holdout_rmse), insample_rmse, holdout_rmse)
+    selection_score <- base_score + warning_penalty
 
     metrics <- bind_rows(
       metrics,
@@ -285,6 +305,9 @@ for (key in split(series, interaction(series$region, series$profession, drop = T
         model = cand$name,
         holdout_rmse = holdout_rmse,
         insample_rmse = insample_rmse,
+        warning_count = warning_count,
+        warning_penalty = warning_penalty,
+        warning_text = ifelse(is.null(cand$warning_text), "", cand$warning_text),
         selection_score = selection_score
       )
     )
@@ -300,6 +323,11 @@ for (key in split(series, interaction(series$region, series$profession, drop = T
 
   holdout_actual <- if (nrow(test) > 0) safe_numeric(test$workforce_supply) else numeric(0)
   holdout_pred <- if (length(selected_candidate$test_pred) > 0) safe_numeric(selected_candidate$test_pred) else numeric(0)
+  if (length(holdout_actual) != length(holdout_pred)) {
+    holdout_actual <- numeric(0)
+    holdout_pred <- numeric(0)
+  }
+
   calibration <- compute_interval_calibration(holdout_actual, holdout_pred, selected_candidate$residuals)
 
   final_fit <- fit_model_by_name(selected_model, key, next_years, numeric(0))
@@ -319,6 +347,7 @@ for (key in split(series, interaction(series$region, series$profession, drop = T
       selected_model = selected_model,
       holdout_rmse = selected_holdout_rmse,
       holdout_points = holdout_n,
+      model_warning_count = ifelse(is.null(selected_candidate$warning_count), 0, selected_candidate$warning_count),
       calibration_addon = calibration$addon,
       calibration_source = calibration$source,
       interval_target = 0.95,
@@ -330,7 +359,7 @@ for (key in split(series, interaction(series$region, series$profession, drop = T
       upper = pmax(upper, predicted_supply),
       uncertainty_width = pmax(upper - lower, 0)
     ) %>%
-    select(region, profession, year, predicted_supply, lower, upper, selected_model, holdout_rmse, holdout_points, calibration_addon, calibration_source, interval_target, uncertainty_width)
+    select(region, profession, year, predicted_supply, lower, upper, selected_model, holdout_rmse, holdout_points, model_warning_count, calibration_addon, calibration_source, interval_target, uncertainty_width)
 
   forecast_rows[[idx]] <- final_future
   idx <- idx + 1
@@ -344,7 +373,7 @@ for (key in split(series, interaction(series$region, series$profession, drop = T
       calibration_addon = ifelse(model == selected_model, calibration$addon, NA_real_),
       calibration_source = ifelse(model == selected_model, calibration$source, NA_character_)
     ) %>%
-    select(region, profession, model, holdout_points, holdout_rmse, insample_rmse, selection_score, selected, calibration_addon, calibration_source)
+    select(region, profession, model, holdout_points, holdout_rmse, insample_rmse, warning_count, warning_penalty, warning_text, selection_score, selected, calibration_addon, calibration_source)
 
   diagnostic_rows[[diagnostic_idx]] <- model_diag
   diagnostic_idx <- diagnostic_idx + 1
